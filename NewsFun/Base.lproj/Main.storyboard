@@ -14,7 +14,7 @@
         <!--News Fun-->
         <scene sceneID="D2v-in-6Ww">
             <objects>
-                <tableViewController id="fLy-QR-NUX" sceneMemberID="viewController">
+                <tableViewController id="fLy-QR-NUX" customClass="ArticleTableViewController" customModule="NewsFun" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tbR-9e-2yp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="541.60000000000002" y="21.139430284857571"/>
         </scene>
-        <!--View Controller-->
+        <!--Article Web View Controller-->
         <scene sceneID="XvK-9r-Ble">
             <objects>
-                <viewController id="dQO-oh-dhS" sceneMemberID="viewController">
+                <viewController id="dQO-oh-dhS" customClass="ArticleWebViewController" customModule="NewsFun" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mcq-34-YyQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
