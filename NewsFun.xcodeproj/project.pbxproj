@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5CA2FB8C981D38022815FCD /* Pods_NewsFun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 348465BD640A43EC16B3E09E /* Pods_NewsFun.framework */; };
 		F65AB0BD20E0A9E3009F3CC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65AB0BC20E0A9E3009F3CC2 /* AppDelegate.swift */; };
 		F65AB0BF20E0A9E3009F3CC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65AB0BE20E0A9E3009F3CC2 /* ViewController.swift */; };
 		F65AB0C220E0A9E3009F3CC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65AB0C020E0A9E3009F3CC2 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		348465BD640A43EC16B3E09E /* Pods_NewsFun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsFun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CCF5E695EEABB423DE3251D /* Pods-NewsFun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsFun.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsFun/Pods-NewsFun.release.xcconfig"; sourceTree = "<group>"; };
+		C1685A5FD28D78F022BEE8AB /* Pods-NewsFun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsFun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsFun/Pods-NewsFun.debug.xcconfig"; sourceTree = "<group>"; };
 		F65AB0B920E0A9E3009F3CC2 /* NewsFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65AB0BC20E0A9E3009F3CC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F65AB0BE20E0A9E3009F3CC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CA2FB8C981D38022815FCD /* Pods_NewsFun.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EF1B0B586BBE5663480199C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1685A5FD28D78F022BEE8AB /* Pods-NewsFun.debug.xcconfig */,
+				9CCF5E695EEABB423DE3251D /* Pods-NewsFun.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C36810A693D52B5E45DC1178 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				348465BD640A43EC16B3E09E /* Pods_NewsFun.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F65AB0B020E0A9E3009F3CC2 = {
 			isa = PBXGroup;
 			children = (
 				F65AB0BB20E0A9E3009F3CC2 /* NewsFun */,
 				F65AB0BA20E0A9E3009F3CC2 /* Products */,
+				6EF1B0B586BBE5663480199C /* Pods */,
+				C36810A693D52B5E45DC1178 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F65AB0CB20E0A9E4009F3CC2 /* Build configuration list for PBXNativeTarget "NewsFun" */;
 			buildPhases = (
+				15BD00EAE31CA58F94804890 /* [CP] Check Pods Manifest.lock */,
 				F65AB0B520E0A9E3009F3CC2 /* Sources */,
 				F65AB0B620E0A9E3009F3CC2 /* Frameworks */,
 				F65AB0B720E0A9E3009F3CC2 /* Resources */,
+				C065B8E135DAC6804AF99521 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15BD00EAE31CA58F94804890 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NewsFun-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C065B8E135DAC6804AF99521 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NewsFun/Pods-NewsFun-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NewsFun/Pods-NewsFun-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F65AB0B520E0A9E3009F3CC2 /* Sources */ = {
@@ -278,6 +343,7 @@
 		};
 		F65AB0CC20E0A9E4009F3CC2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1685A5FD28D78F022BEE8AB /* Pods-NewsFun.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +362,7 @@
 		};
 		F65AB0CD20E0A9E4009F3CC2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CCF5E695EEABB423DE3251D /* Pods-NewsFun.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
