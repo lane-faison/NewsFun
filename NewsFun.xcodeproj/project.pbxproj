@@ -15,6 +15,8 @@
 		F65AB0C720E0A9E4009F3CC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65AB0C520E0A9E4009F3CC2 /* LaunchScreen.storyboard */; };
 		F6B1D4BD20E3526000204D88 /* ArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B1D4BC20E3526000204D88 /* ArticleTableViewController.swift */; };
 		F6B1D4BF20E3528800204D88 /* ArticleWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B1D4BE20E3528800204D88 /* ArticleWebViewController.swift */; };
+		F6B1D4C120E4A5C600204D88 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B1D4C020E4A5C600204D88 /* Article.swift */; };
+		F6B1D4C420E5A3C100204D88 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B1D4C320E5A3C100204D88 /* Dictionary+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		F65AB0C820E0A9E4009F3CC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6B1D4BC20E3526000204D88 /* ArticleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewController.swift; sourceTree = "<group>"; };
 		F6B1D4BE20E3528800204D88 /* ArticleWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWebViewController.swift; sourceTree = "<group>"; };
+		F6B1D4C020E4A5C600204D88 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		F6B1D4C320E5A3C100204D88 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 		F65AB0BB20E0A9E3009F3CC2 /* NewsFun */ = {
 			isa = PBXGroup;
 			children = (
+				F6B1D4C220E5A3B000204D88 /* Helpers */,
+				F6B1D4C020E4A5C600204D88 /* Article.swift */,
 				F6B1D4BC20E3526000204D88 /* ArticleTableViewController.swift */,
 				F6B1D4BE20E3528800204D88 /* ArticleWebViewController.swift */,
 				F656B21C20E350CC00744CBD /* NewsHelper.swift */,
@@ -92,6 +98,14 @@
 				F65AB0C820E0A9E4009F3CC2 /* Info.plist */,
 			);
 			path = NewsFun;
+			sourceTree = "<group>";
+		};
+		F6B1D4C220E5A3B000204D88 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F6B1D4C320E5A3C100204D88 /* Dictionary+Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +224,8 @@
 				F6B1D4BD20E3526000204D88 /* ArticleTableViewController.swift in Sources */,
 				F6B1D4BF20E3528800204D88 /* ArticleWebViewController.swift in Sources */,
 				F656B21D20E350CC00744CBD /* NewsHelper.swift in Sources */,
+				F6B1D4C120E4A5C600204D88 /* Article.swift in Sources */,
+				F6B1D4C420E5A3C100204D88 /* Dictionary+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
