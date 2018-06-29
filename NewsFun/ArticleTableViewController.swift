@@ -1,30 +1,34 @@
 import UIKit
+import Kingfisher
 
 class ArticleTableViewController: UITableViewController {
-
+    
+    var articles: Articles?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NewsHelper().getArticles()
-    }
-    
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        NewsHelper().getArticles { articles in
+            self.articles = articles
+            self.tableView.reloadData()
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return articles?.articles.count ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as? ArticleCell,
+            let article = articles?.articles[indexPath.row] {
+            
+            cell.textLabel?.text = article.title
+            cell.categoryLabel.text = article.category
+            cell.articleImageView.kf.setImage(with: article.urlToImage)
+            
+            
+            return cell
+        }
+        return UITableViewCell()
     }
-    */
 }

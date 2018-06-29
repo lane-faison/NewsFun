@@ -13,6 +13,7 @@
 		F65AB0C220E0A9E3009F3CC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65AB0C020E0A9E3009F3CC2 /* Main.storyboard */; };
 		F65AB0C420E0A9E4009F3CC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F65AB0C320E0A9E4009F3CC2 /* Assets.xcassets */; };
 		F65AB0C720E0A9E4009F3CC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F65AB0C520E0A9E4009F3CC2 /* LaunchScreen.storyboard */; };
+		F6991B0D20E5FA1D001CBBB9 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6991B0C20E5FA1D001CBBB9 /* ArticleCell.swift */; };
 		F6B1D4BD20E3526000204D88 /* ArticleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B1D4BC20E3526000204D88 /* ArticleTableViewController.swift */; };
 		F6B1D4BF20E3528800204D88 /* ArticleWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B1D4BE20E3528800204D88 /* ArticleWebViewController.swift */; };
 		F6B1D4C120E4A5C600204D88 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B1D4C020E4A5C600204D88 /* Article.swift */; };
@@ -30,6 +31,7 @@
 		F65AB0C320E0A9E4009F3CC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F65AB0C620E0A9E4009F3CC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F65AB0C820E0A9E4009F3CC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6991B0C20E5FA1D001CBBB9 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		F6B1D4BC20E3526000204D88 /* ArticleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewController.swift; sourceTree = "<group>"; };
 		F6B1D4BE20E3528800204D88 /* ArticleWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleWebViewController.swift; sourceTree = "<group>"; };
 		F6B1D4C020E4A5C600204D88 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				F6B1D4C320E5A3C100204D88 /* Dictionary+Extensions.swift */,
+				F6991B0C20E5FA1D001CBBB9 /* ArticleCell.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -204,11 +207,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-NewsFun/Pods-NewsFun-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DocumentClassifier/DocumentClassifier.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentClassifier.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -226,6 +231,7 @@
 				F6B1D4BD20E3526000204D88 /* ArticleTableViewController.swift in Sources */,
 				F6B1D4BF20E3528800204D88 /* ArticleWebViewController.swift in Sources */,
 				F656B21D20E350CC00744CBD /* NewsHelper.swift in Sources */,
+				F6991B0D20E5FA1D001CBBB9 /* ArticleCell.swift in Sources */,
 				F6B1D4C120E4A5C600204D88 /* Article.swift in Sources */,
 				F6B1D4C420E5A3C100204D88 /* Dictionary+Extensions.swift in Sources */,
 			);
