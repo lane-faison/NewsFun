@@ -1,4 +1,5 @@
 import Foundation
+import DocumentClassifier
 
 public struct Articles: Decodable {
     var articles: [Article]
@@ -23,6 +24,7 @@ public struct Article: Decodable {
     var url: URL?
     var urlToImage: URL?
     var publishedAt: Date?
+    var category: String?
     
     enum CodingKeys: String, CodingKey {
         case source
@@ -61,6 +63,11 @@ public struct Article: Decodable {
         if let publishedAtString = try container.decodeIfPresent(String.self, forKey: .publishedAtString) {
             let dateFormatter = DateFormatter()
             publishedAt = dateFormatter.date(from: publishedAtString)
+        }
+        
+        // CoreML implementation
+        if let description = description, let title = title, let classification = DocumentClassifier().classify(title + description) {
+            category = classification.prediction.category.rawValue
         }
     }
 }
