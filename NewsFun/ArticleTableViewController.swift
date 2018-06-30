@@ -22,13 +22,23 @@ class ArticleTableViewController: UITableViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as? ArticleCell,
             let article = articles?.articles[indexPath.row] {
             
-            cell.textLabel?.text = article.title
+            cell.titleLabel.text = article.title
             cell.categoryLabel.text = article.category
-            cell.articleImageView.kf.setImage(with: article.urlToImage)
             
+            let placeholderImage = UIImage(named: "newspaper")
+            
+            if let url = article.urlToImage {
+                cell.articleImageView.kf.setImage(with: url, placeholder: placeholderImage, options: nil, progressBlock: nil, completionHandler: nil)
+            } else {
+                cell.articleImageView.image = placeholderImage
+            }
             
             return cell
         }
         return UITableViewCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 260
     }
 }
