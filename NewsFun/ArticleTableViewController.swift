@@ -8,6 +8,15 @@ class ArticleTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTableView()
+        getArticles()
+    }
+    
+    private func setupTableView() {
+        tableView.separatorStyle = .none
+    }
+    
+    private func getArticles() {
         NewsHelper().getArticles { articles in
             self.articles = articles
             self.tableView.reloadData()
@@ -23,7 +32,8 @@ class ArticleTableViewController: UITableViewController {
             let article = articles?.articles[indexPath.row] {
             
             cell.titleLabel.text = article.title
-            cell.categoryLabel.text = article.category
+            cell.categoryLabel.text = article.category.rawValue
+            cell.categoryLabel.backgroundColor = article.categoryColor
             
             let placeholderImage = UIImage(named: "newspaper")
             
@@ -40,5 +50,22 @@ class ArticleTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 260
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let article = articles?.articles[indexPath.row] else { return }
+        
+        performSegue(withIdentifier: "goToUrl", sender: article)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "goToUrl",
+            let article = sender as? Article,
+            let webVC = segue.destination as? ArticleWebViewController else { return }
+        webVC.article = article
+    }
+    
+    @IBAction func reloadTapped(_ sender: Any) {
+        getArticles()
     }
 }

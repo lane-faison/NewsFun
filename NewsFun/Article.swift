@@ -24,7 +24,8 @@ public struct Article: Decodable {
     var url: URL?
     var urlToImage: URL?
     var publishedAt: Date?
-    var category: String?
+    var category: NewsCategory = .business
+    var categoryColor: UIColor = .gray
     
     enum CodingKeys: String, CodingKey {
         case source
@@ -34,6 +35,14 @@ public struct Article: Decodable {
         case urlString = "url"
         case urlToImageString = "urlToImage"
         case publishedAtString = "publishedAt"
+    }
+    
+    public enum NewsCategory: String {
+        case business = " 💼 Business"
+        case entertainment = "🎪 Entertainment"
+        case politics = "💣 Politics"
+        case sports = "🏈 Sports"
+        case technology = "📱Technology"
     }
     
     public struct Source: Decodable {
@@ -67,7 +76,23 @@ public struct Article: Decodable {
         
         // CoreML implementation
         if let description = description, let title = title, let classification = DocumentClassifier().classify(title + description) {
-            category = classification.prediction.category.rawValue
+            
+            switch classification.prediction.category {
+            case .business:
+                category = .business
+            case .entertainment:
+                category = .entertainment
+                categoryColor = .yellow
+            case .politics:
+                category = .politics
+                categoryColor = .red
+            case .sports:
+                category = .sports
+                categoryColor = .green
+            case .technology:
+                category = .technology
+                categoryColor = .darkGray
+            }
         }
     }
 }
